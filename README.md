@@ -1,4 +1,4 @@
-# <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg" width="40" height="40"> Ruby Interview Questions
+# Ruby Interview Questions
 
 While typical programming interview questions may focus on problem solving, data structures, and algorithms, these questions focus on concepts specific to Ruby programming. These questions may be useful in judging a developers's experience and understanding of the Ruby language.
 
@@ -815,6 +815,4 @@ A: `English`
 License
 ===============================================================================
 
-The textual contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open.
-
-Ruby logo is Copyright (c) 2006, Yukihiro Matsumoto, used under [Creative Commons](http://en.wikipedia.org/wiki/Creative_Commons) [Attribution-Share Alike 2.5 Generic](http://creativecommons.org/licenses/by-sa/2.5/deed.en) license. Use of the logo here does not suggest that this work is endorsed by Yukihiro Matsumoto or the Ruby Visual Identity Team.
+The contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open.
