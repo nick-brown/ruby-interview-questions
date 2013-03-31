@@ -206,7 +206,7 @@ Q: Which binds more tightly? `&&` or `=`
 A: `&&`
 
 Q: Which binds more tightly? `and` or `=`  
-A: `and`
+A: `=`
 
 Q: Which binds more tightly? `&&` or `||`  
 A: `&&`
