@@ -14,7 +14,7 @@ Standard Ruby documentation syntax is used. `::` is used to signify access to co
 
 #### Contributing
 
-Meaningful contributions will be accepted. A meaningful contributions may mean any of the following:
+Meaningful contributions will be accepted. A meaningful contribution may be any of the following:
 
 * New questions with answers.  
 * Fixes to existing questions or answers.  
