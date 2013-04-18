@@ -32,6 +32,9 @@ Language Characteristics and Core Objects
 Q: What are the only two values that evaluate to false?  
 A: `false` and `nil`
 
+Q: True or False: Ruby uses short circuit evaluation.
+A: True.
+
 Q: Is Ruby whitespace-dependent?  
 A: Sometimes.
 
@@ -67,6 +70,9 @@ A: All statements are expressions in Ruby since all statements return a value. A
 
 Q: What module would need to use for cryptographically secure random numbers?  
 A: `SecureRandom`
+
+Q: Where does the scope change in a Ruby program?
+A: At module, class, and def.
 
 Data Types
 -------------------------------------------------------------------------------
@@ -111,7 +117,7 @@ A: Define singleton methods on them.
 Q: What does the colon syntax do?
 A: The colon is an initializer of the class Symbol.
 
-Q: True or False, Is it possible to initialize a symbol with Symbol.new?
+Q: True or False: It's possible to initialize a symbol with Symbol.new
 A: False
 
 
@@ -147,6 +153,15 @@ A: Shortcut for array of strings
 
 Q: What does %W allow for?
 A: With %W it's possible to do string interpolation.
+
+Q: True or False: It's possible to concatenate arrays
+A: True
+
+Q: True or False: a, b = ['foo', 'bar'] # a = 'foo', b = 'bar'
+A: True
+
+Q: True or False: This will throw an exception a, b = 1, 2, 3, 4
+A: False 
 
 ### Hash
 
@@ -192,6 +207,9 @@ A: Using `#{}` just like as in a double-quoted string literal.
 
 Q: What is the global variable for the last `Regexp` match?  
 A: `$LAST_MATCH_INFO` equivalent to `$~`
+
+Q: What does the %r{} syntax allow and why is it useful?
+A: It creates a regexp object, but you don't have to escape / 
 
 Operators
 -------------------------------------------------------------------------------
