@@ -141,6 +141,13 @@ A: `BigDecimal`
 Q: What method might you use to remove duplicate values from an array?  
 A: `#uniq`
 
+Q: What is the %w syntax used for?
+A: Shortcut for array of strings 
+  a = %w(superman batman) # => ["superman", "batman"]
+
+Q: What does %W allow for?
+A: With %W it's possible to do string interpolation.
+
 ### Hash
 
 Q: Name one synonym for `#key?`?  
