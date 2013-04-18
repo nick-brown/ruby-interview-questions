@@ -108,12 +108,20 @@ A: Strings are mutable while symbols are immutable. Though Ruby internally makes
 Q: What can't you do to instantiations of `Symbol` and `Fixnum` that you can do to all other instances of core Ruby objects?  
 A: Define singleton methods on them.
 
+Q: What does the colon syntax do?
+A: The colon is an initializer of the class Symbol.
+
+Q: True or False, Is it possible to initialize a symbol with Symbol.new?
+A: False
+
+
+
 ### Numeric
 
 Q: Are `Numeric` objects mutable?  
 A: No.
 
-Q: Symbols are mutable objects. Name another immutable core Ruby object.  
+Q: Symbols are immutable objects. Name another immutable core Ruby object.  
 A: `Fixnum`
 
 Q: What happens when a value is too big for `Fixnum`?  
