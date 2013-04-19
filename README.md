@@ -32,6 +32,9 @@ Language Characteristics and Core Objects
 Q: What are the only two values that evaluate to false?  
 A: `false` and `nil`
 
+Q: True or False: Ruby uses short circuit evaluation.
+A: True.
+
 Q: Is Ruby whitespace-dependent?  
 A: Sometimes.
 
@@ -67,6 +70,9 @@ A: All statements are expressions in Ruby since all statements return a value. A
 
 Q: What module would need to use for cryptographically secure random numbers?  
 A: `SecureRandom`
+
+Q: Where does the scope change in a Ruby program?
+A: At module, class, and def.
 
 Data Types
 -------------------------------------------------------------------------------
@@ -108,12 +114,20 @@ A: Strings are mutable while symbols are immutable. Though Ruby internally makes
 Q: What can't you do to instantiations of `Symbol` and `Fixnum` that you can do to all other instances of core Ruby objects?  
 A: Define singleton methods on them.
 
+Q: What does the colon syntax do?
+A: The colon is an initializer of the class Symbol.
+
+Q: True or False: It's possible to initialize a symbol with Symbol.new
+A: False
+
+
+
 ### Numeric
 
 Q: Are `Numeric` objects mutable?  
 A: No.
 
-Q: Symbols are mutable objects. Name another immutable core Ruby object.  
+Q: Symbols are immutable objects. Name another immutable core Ruby object.  
 A: `Fixnum`
 
 Q: What happens when a value is too big for `Fixnum`?  
@@ -132,6 +146,22 @@ A: `BigDecimal`
 
 Q: What method might you use to remove duplicate values from an array?  
 A: `#uniq`
+
+Q: What is the %w syntax used for?
+A: Shortcut for array of strings 
+  a = %w(superman batman) # => ["superman", "batman"]
+
+Q: What does %W allow for?
+A: With %W it's possible to do string interpolation.
+
+Q: True or False: It's possible to concatenate arrays
+A: True
+
+Q: True or False: a, b = ['foo', 'bar'] # a = 'foo', b = 'bar'
+A: True
+
+Q: True or False: This will throw an exception a, b = 1, 2, 3, 4
+A: False 
 
 ### Hash
 
@@ -177,6 +207,9 @@ A: Using `#{}` just like as in a double-quoted string literal.
 
 Q: What is the global variable for the last `Regexp` match?  
 A: `$LAST_MATCH_INFO` equivalent to `$~`
+
+Q: What does the %r{} syntax allow and why is it useful?
+A: It creates a regexp object, but you don't have to escape / 
 
 Operators
 -------------------------------------------------------------------------------
