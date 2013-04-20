@@ -4,7 +4,7 @@ These questions may be useful in judging a developers's experience and understan
 
 #### Organization
 
-The questions are listed in ascending order by their general difficulty within each section category. Questions in some sections may not be perceived as difficult at all. Remember that the perceived difficulty of these questions is highly subjective. Comprehensive answers are also provided for the understanding convenience of the reader.
+The questions are listed in ascending order by their general difficulty within each section category. Remember that the perceived difficulty of these questions is highly subjective. Comprehensive answers are also provided for the understanding and convenience of the reader.
 
 #### Syntax
 
