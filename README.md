@@ -1,10 +1,6 @@
-<img src="img/ruby_interview_questions_logo.png" style="float: left; margin: 5px 10px 8px 0;">
-# Ruby Interview Questions
-<div style="clear: both;"></div>
+#<img src="img/ruby_interview_questions_logo.png"> Ruby Interview Questions
 
-While typical programming interview questions may focus on problem solving, data structures, and algorithms, these questions focus on concepts specific to Ruby programming. These questions may be useful in judging a developers's experience and understanding of the Ruby language.
-
-A significant amount of discretion should be used when using programming-language specific questions such as these since the memorizaton of core objects and methods is not necessarily indicative of a good programmer. Most of the questions here are focused on Ruby's behavior for that reason. With that in mind, an experienced Ruby developer should be able to answer the bulk of the easiest and intermediate questions.
+These questions may be useful in judging a developers's experience and understanding of the Ruby language. A significant amount of discretion should be used when using programming-language specific questions such as these since the memorizaton of core objects and methods is not necessarily indicative of a good programmer. Most of the questions here are focused on Ruby's behavior for that reason. With that in mind, an experienced Ruby developer should be able to answer the bulk of the easiest and intermediate questions.
 
 #### Organization
 
