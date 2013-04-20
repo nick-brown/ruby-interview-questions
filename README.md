@@ -1,4 +1,6 @@
+<img src="img/ruby_interview_questions_logo.png" style="float: left; margin: 5px 10px 8px 0;">
 # Ruby Interview Questions
+<div style="clear: both;"></div>
 
 While typical programming interview questions may focus on problem solving, data structures, and algorithms, these questions focus on concepts specific to Ruby programming. These questions may be useful in judging a developers's experience and understanding of the Ruby language.
 
@@ -843,4 +845,4 @@ A: `English`
 License
 ===============================================================================
 
-The contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open.
+The text contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open. Ruby Interview Questions logo is not covered under this LICENSE and may not be reproduced without the author's consent.
