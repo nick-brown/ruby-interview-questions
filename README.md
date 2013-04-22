@@ -193,7 +193,7 @@ Q: What is the regular expression modifier to ignore case?
 A: `i`
 
 Q: What is the pattern matching operator?  
-A: `#~=`
+A: `#=~`
 
 Q: How might you include an expression within a `Regexp` literal?  
 A: Using `#{}` just like as in a double-quoted string literal.
