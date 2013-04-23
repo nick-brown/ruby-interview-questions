@@ -1,14 +1,6 @@
 #<img src="img/ruby_interview_questions_logo.png"> Ruby Interview Questions
 
-These questions may be useful in judging a developers's experience and understanding of the Ruby language. A significant amount of discretion should be used when using programming-language specific questions such as these since the memorizaton of core objects and methods is not necessarily indicative of a good programmer. Most of the questions here are focused on Ruby's behavior for that reason. With that in mind, an experienced Ruby developer should be able to answer the bulk of the easiest and intermediate questions.
-
-#### Organization
-
-The questions are listed in ascending order by their general difficulty within each section category. Remember that the perceived difficulty of these questions is highly subjective. Comprehensive answers are also provided for the understanding and convenience of the reader.
-
-#### Syntax
-
-Standard Ruby documentation syntax is used. `::` is used to signify access to constants and class methods while `#` is used to signify access to instance methods.
+These questions may be useful in gauging a developer's understanding of the Ruby language. A significant amount of discretion should be used when using programming-language specific questions such as these since the memorizaton of core objects and methods is not necessarily indicative of programming ability. Most of the questions here are focused on Ruby's behavior for that reason. With that in mind, an experienced Ruby developer should be able to elaborate on the bulk of the easiest and intermediate questions.
 
 #### Contributing
 
@@ -19,7 +11,7 @@ Meaningful contributions will be accepted. A meaningful contribution may be any 
 * Clarification of existing questions or answers.  
 * Elaboration of existing answers.
 
-Any fixes to answers or updates to questions that make them more readable or understandable should be promptly merged. Questions that contain code should be tested before they are submitted. Remember that the meaning of these questions is to gauge an overall familiarity with Ruby concepts and behaviors, and also a general familiarity of core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Questions about experience, motivations, and related questions should also not be listed here. Significant contributors should be added to the list below.
+Any fixes to answers or updates to questions that make them more readable or understandable should be accepted. Questions that contain code should be tested before they are submitted. Remember that the meaning of these questions is to gauge an overall familiarity with Ruby concepts and behaviors, as well as a general familiarity of core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Questions about experience, motivations, and related topics should also not be listed here. Standard Ruby documentation syntax is used. `::` signifies access to constants and class methods while `#` signifies access to instance methods. Questions are listed in ascending order by their general difficulty within each section category. Sample answers should also be provided for the convenience of the reader. Significant contributors should be added to the list below.
 
 * [@gregstallings](<https://twitter.com/gregstallings>)
 * [@npalaniuk](<https://twitter.com/npalaniuk>)
@@ -40,7 +32,7 @@ Q: What is the highest level in the object model in Ruby 1.9+?
 A: `BasicObject`
 
 Q: Is everything in Ruby an object?  
-A: No. Methods are not objects. Blocks are not objects.
+A: No. Methods are not objects. Blocks are not objects. Keywords are not objects. However, there exist Method objects and Proc objects, and some keywords refer to objects.
 
 Q: Which core object includes the `Kernel` module?  
 A: `Object`
@@ -112,9 +104,6 @@ A: Strings are mutable while symbols are immutable. Though Ruby internally makes
 Q: What can't you do to instantiations of `Symbol` and `Fixnum` that you can do to all other instances of core Ruby objects?  
 A: Define singleton methods on them.
 
-Q: What does the single colon syntax do?  
-A: The colon is an initializer of the class `Symbol`.
-
 Q: True or False: It's possible to initialize a symbol with `Symbol.new`?  
 A: False
 
@@ -129,10 +118,10 @@ A: `Fixnum`
 Q: What happens when a value is too big for `Fixnum`?  
 A: It is automatically converteed to a `Bignum`.
 
-Q: The superclass of `Fixnum` is _\_\_.  
+Q: The superclass of `Fixnum` is __.  
 A: `Integer`
 
-Q: The superclass of `Integer` is _\_\_.  
+Q: The superclass of `Integer` is __.  
 A: `Numeric`
 
 Q: What numeric class might you use to avoid the rounding error inherent in the use of binary floating-point arithmetic?  
@@ -148,7 +137,7 @@ A: It is a shortcut for array of strings
    `a = %w(superman batman)` #=> `["superman", "batman"]`
 
 Q: What does `%W` allow for?  
-A: With `%W` it's possible to do string interpolation.
+A: With `%W` it is possible to define an array containing string interpolation.
 
 Q: True or False: `a, b = ['foo', 'bar']` #=> `a = 'foo', b = 'bar'`  
 A: True
@@ -189,12 +178,6 @@ A: comparison, iteration
 
 ### Regexp
 
-Q: What is the regular expression modifier to ignore case?  
-A: `i`
-
-Q: What is the pattern matching operator?  
-A: `#~=`
-
 Q: How might you include an expression within a `Regexp` literal?  
 A: Using `#{}` just like as in a double-quoted string literal.
 
@@ -202,7 +185,7 @@ Q: What is the global variable for the last `Regexp` match?
 A: `$LAST_MATCH_INFO` equivalent to `$~`
 
 Q: What does the `%r` syntax allow and why is it useful?  
-A: It creates a `Regexp` object, but you don't have to escape /
+A: It creates a `Regexp` object, in which you don't need to escape /
 
 Operators
 -------------------------------------------------------------------------------
@@ -321,13 +304,13 @@ A: Ruby will throw an exception if more than the expected number of arguments ar
 Methods
 -------------------------------------------------------------------------------
 
-Q: Can methods be overloaded?  
+Q: Can methods in Ruby be overloaded?  
 A: No.
 
 Q: How would you test whether an object has a method?  
 A: `#respond_to?` or `#method?`
 
-Q: What is `self`?  
+Q: What is the meaning of `self`?  
 A: The current object.
 
 Q: What does a bang `!` at the end of a method signify?  
@@ -381,9 +364,6 @@ A: They are public by default. You can change their visibility using `#private_c
 Q: Does a method return a value if it does not contain an expression?  
 A: Yes, it returns `nil`.
 
-Q: Name one instance when parenthesis are required in method invocation?  
-A: In the case of nested method invocation such as `f(g())`.
-
 Q: If a method is declared outside a class or module definition at the top-level, where does it live?  
 A: As a private instance method of `Object`, whose value of `self` resolves to the special "main" object.
 
@@ -408,7 +388,7 @@ Q: What is the difference between `#remove_method` and `#undef_method`?
 A: `#undef_method` prevents any invocation of the method through an instance of the class, while `#remove_method` will remove the method definition from the class, but not prevent inherited methods of the same name from being invoked.
 
 Q: Explain how Ruby syntax supports object specifiers in parameters lists?  
-A: You can leave off the curly brackets from a hash in a parameter list, assuming it is the only argument in the list.
+A: You can leave off the curly brackets from a hash in a parameter list, assuming it is the last argument in the list.
 
 Procs and Lambdas
 -------------------------------------------------------------------------------
@@ -437,7 +417,7 @@ A: You would encounter this exception when attempting to return from a method th
 Closures
 -------------------------------------------------------------------------------
 
-Q: What is a closure?  
+Q: What is a closure in Ruby?  
 A: A closure is an object that is both an invocable function together with a variable binding. The object retains access to the local variables that were in scope at the time of the object definition.
 
 Q: Does a closure in Ruby retain variables by value or by reference?  
@@ -574,7 +554,7 @@ A: Since there is only one instance of the class, there will only be one variati
 Modules
 -------------------------------------------------------------------------------
 
-Q: What are the two functions of modules?  
+Q: What are two functions of modules?  
 A: As mixins or as namespaces.
 
 Q: Can a module be subclassed?  
@@ -729,7 +709,7 @@ Q: What does `File#expand_path` do?
 A: Converts a relative path to a fully qualified path.
 
 Q: What method in `Dir` is used to list the contents of a directory?  
-A: `#entries` or `#foreach`
+A: `#entries`, `#foreach`...
 
 Q: What is an `IO` object?  
 A: An IO object is an instance of class IO that can be used for reading or writing binary data to and from a file.
@@ -769,7 +749,7 @@ A: `ArgumentError`
 Q: What error is raised if no `#method_missing` methods resolve to a method?  
 A: `NoMethodError`
 
-Q: The superclass of `StandardError` is _\_\_.  
+Q: The superclass of `StandardError` is __.  
 A: `Exception`
 
 Q: What does the default implementation of `Kernel#module_missing` do?  
@@ -805,20 +785,14 @@ A: `Kernel#__callee__`
 The Ruby Environment and the Interpreter
 -------------------------------------------------------------------------------
 
-Q: What does MRI most commonly stand for?  
-A: Matz's Ruby Interpreter
-
-Q: What does IRB stand for?  
-A: Interactive Ruby
-
 Q: What is the difference between `#puts` and `#prints`?  
 A: `#puts` appends a newline to the output.
 
 Q: Where do the curly brackets to define a hash literal `{}` exist in Ruby's object model?  
 A: It does not exist within the object model. It exists as a function of the interpreter.
 
-Q: What is the default encoding in MRI?  
-A: ASCII
+Q: In Ruby 2.0, what is the default encoding in MRI?  
+A: UTF-8
 
 Q: What is the global constant used to access environment variable settings in effect for the interpreter?  
 A: `ENV`
@@ -841,4 +815,4 @@ A: `English`
 License
 ===============================================================================
 
-The text contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open. Ruby Interview Questions logo is not covered under this LICENSE and may not be reproduced without the author's consent.
+The text contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open.
