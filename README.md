@@ -292,7 +292,7 @@ A: `#reduce`
 Q: Why might you use `#each` instead of `for/in`?  
 A: It's the "Ruby way" - it is an example of how Ruby defines methods that mimic natural language concepts. Iterator methods such as `#each` read more naturally. `#each` is a block so it defines a new variable scope. `for/in` depends on the existence of `#each` which implies that `#each` is a more fundamental part of the language.
 
-Q: What happens if a bock in Ruby 1.9+ is passed two arguments but only accepts one argument?  
+Q: What happens if a block in Ruby 1.9+ is passed two arguments but only accepts one argument?  
 A: Nothing. Only the first argument will be passed to the block.
 
 Q: How is a block anonymous?  
