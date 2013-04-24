@@ -37,7 +37,7 @@ A: No. Methods are not objects. Blocks are not objects. Keywords are not objects
 Q: Which core object includes the `Kernel` module?  
 A: `Object`
 
-Q: What can you say for sure about an identifier that begins with a capital letter?  
+Q: What can you say about an identifier that begins with a capital letter?  
 A: It is a constant.
 
 Q: What does DSL stand for and why does it come up when describing Ruby?  
