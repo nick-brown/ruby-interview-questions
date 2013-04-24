@@ -1,6 +1,6 @@
-#<img src="img/ruby_interview_questions_logo.png"> Ruby Interview Questions
+#<img src="img/ruby_trivia_logo.png"> Ruby Trivia
 
-These questions may be useful in gauging a developer's understanding of the Ruby language. A significant amount of discretion should be used when using programming-language specific questions such as these since the memorizaton of core objects and methods is not necessarily indicative of programming ability. Most of the questions here are focused on Ruby's behavior for that reason. With that in mind, an experienced Ruby developer should be able to elaborate on the bulk of the easiest and intermediate questions.
+A list of questions about Ruby programming you can use to quiz yourself.
 
 #### Contributing
 
@@ -11,7 +11,7 @@ Meaningful contributions will be accepted. A meaningful contribution may be any 
 * Clarification of existing questions or answers.  
 * Elaboration of existing answers.
 
-Any fixes to answers or updates to questions that make them more readable or understandable should be accepted. Questions that contain code should be tested before they are submitted. Remember that the meaning of these questions is to gauge an overall familiarity with Ruby concepts and behaviors, as well as a general familiarity of core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Questions about experience, motivations, and related topics should also not be listed here. Standard Ruby documentation syntax is used. `::` signifies access to constants and class methods while `#` signifies access to instance methods. Questions are listed in ascending order by their general difficulty within each section category. Sample answers should also be provided for the convenience of the reader. Significant contributors should be added to the list below.
+Any fixes to answers or updates to questions that make them more readable or understandable should be accepted. Questions that contain code should be tested before they are submitted. The questions should be focused around Ruby concepts and behaviors, as well as core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Standard Ruby documentation syntax is used. `::` signifies access to constants and class methods while `#` signifies access to instance methods. Questions are listed in ascending order by their general difficulty within each section category. Sample answers should also be provided for the convenience of the reader. Significant contributors will be added to the list below.
 
 * [@gregstallings](<https://twitter.com/gregstallings>)
 * [@npalaniuk](<https://twitter.com/npalaniuk>)
