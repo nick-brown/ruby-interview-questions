@@ -62,7 +62,7 @@ Q: What module would need to use for cryptographically secure random numbers?
 A: `SecureRandom`
 
 Q: Where does scope change in a Ruby program?  
-A: At `module`, `class`, and `def`.
+A: At `module`, `class`, `def`, and blocks.
 
 Data Types
 -------------------------------------------------------------------------------
@@ -101,16 +101,10 @@ A: Symbols are scalar value objects used as identifiers, mapping immutable strin
 Q: Why are symbols typically used as hash keys instead of strings?  
 A: Strings are mutable while symbols are immutable. Though Ruby internally makes an immutable copy of a string when used as a hash key, comparing two symbols is faster than comparing two `String` objects. This is also a convention.
 
-Q: What can't you do to instantiations of `Symbol` and `Fixnum` that you can do to all other instances of core Ruby objects?  
-A: Define singleton methods on them.
-
 Q: True or False: It's possible to initialize a symbol with `Symbol.new`?  
 A: False
 
 ### Numeric
-
-Q: Are `Numeric` objects mutable?  
-A: No.
 
 Q: Symbols are immutable objects. Name another immutable core Ruby object.  
 A: `Fixnum`
@@ -320,7 +314,7 @@ Q: What is a mutator method?
 A: A method which alters the internal state of the object receiver.
 
 Q: Is a method an object?  
-A: No, however, a `MethodObject` is an object.
+A: No, however, a `Method` object is an object.
 
 Q: What is a predicate in the context of Ruby method naming conventions?  
 A: A method that answers a question posed by the method invocation or method name. Predicates typically return a boolean.
@@ -329,7 +323,7 @@ Q: Are instance methods public or private?
 A: They are public by default. You can change their visibility using `Module#private`, `Module#protected`, or back again using `Module#public`.
 
 Q: When might you explicitly use the `return` statement.  
-A: To return from a method prematurely or to return multiple values.
+A: To return from a method prematurely.
 
 Q: Why might you want to alias a method?  
 A: To create a synonym for the method that is more readable or appropriate for the context of some problems. To add functionality to a method.
@@ -370,13 +364,14 @@ A: As a private instance method of `Object`, whose value of `self` resolves to t
 Q: What is the origin of the "keywords" `public`, `private`, and `protected`?  
 A: They are instance methods of the `Module` class. Since `Class` subclasses `Module`, the methods can be invoked without explicit reference to `self` such as `self.private`.
 
-Q: Describe the method name resolution process.  
+Q: Describe the method name resolution process in Ruby 1.9.  
 A:  
 1. Check eigenclass for singleton methods including inheritance of eigenclasses on class objects.  
 2. Check for instance methods.  
 3. Check for instance methods of any included modules.  
 4. Check instance methods and instance methods of any included modules in the inheritance hierarchy.  
-5. Invoke `#method_missing` following steps 1-4, resolving to `Kernel#method_missing` if not found.
+5. Invoke `#method_missing` following steps 1-4, resolving to `BasicObject#method_missing` if not found.  
+(Changed in Ruby 2.0)
 
 Q: How do you define a private class method?  
 A: Define the class method and then call `#private_class_method` with an argument as a symbol of the class method name.
@@ -484,9 +479,6 @@ A: Because the class keyword creates a new constant that refers to the class and
 
 Q: Is `#initialize` an instance method or a class method?  
 A: An instance method.
-
-Q: Why can't a class instance variable be used within an instance method?  
-A: Because it would be an instance method.
 
 Q: What is the difference between a class variable and a class instance variable?  
 A: Class instance variables are instance variables of a class. Class instance variables cannot be used within instance methods.
@@ -602,7 +594,7 @@ A: `#instance_of?` ignores inheritance and any mixed-in modules.
 Q: If `#super` is invoked without any arguments, which if any arguments get passed to the superclass method?  
 A: All the arguments that were passed to the subclass method will be passed to the superclass method.
 
-Q: Are instance methods inherited?  
+Q: Are singleton methods inherited?  
 A: No, since they are not defined by a class and thus are unrelated to the inheritance mechanism.
 
 Q: Are class methods inherited?  
@@ -660,13 +652,10 @@ Q: Does `#eval` accept a block?
 A: No, `#eval` can only accept a string. `#class_eval` and `#instance_eval` accept blocks.
 
 Q: How might you obtain a reference to an eigenclass from within its associated class?  
-A: `eigenclass = class << self; self; end`
+A: `eigenclass = class << self; self; end`, `#singleton_class`
 
 Q: How might you change method visibility from outside a class definition?  
 A: Using `#class_eval`
-
-Q: Why is `#eval` useful for testing code?  
-A: Because it doesn't alter the local scope.
 
 Q: What is the difference between `#instance_eval` and `#instance_exec`?  
 A: `#instance_exec` can only accept a block, and not a string, and it can accept arguments and pass them to the block, allowing the block to be evaluated in the context of the receiver object with parameters whose values come from the block.
@@ -674,7 +663,7 @@ A: `#instance_exec` can only accept a block, and not a string, and it can accept
 Q: Where do `#class_variable_get` and `#class_variables_set` live in the object model?  
 A: `Module`
 
-Q: Where do `#instance_variable_get` and `#instance_variables_set` live in the object model?  
+Q: Where do `#instance_variable_get` and `#instance_variable_set` live in the object model?  
 A: `Object`
 
 Q: Where do `#local_variables` and `#global` live in the object model?  
@@ -752,7 +741,7 @@ A: `NoMethodError`
 Q: The superclass of `StandardError` is __.  
 A: `Exception`
 
-Q: What does the default implementation of `Kernel#module_missing` do?  
+Q: What does the default implementation of `BasicObject#method_missing` do?  
 A: Just raises a `NoMethodError`.
 
 Q: What happens if you attempt to redefine `BasicObject#__send__`?  
