@@ -110,7 +110,7 @@ Q: Symbols are immutable objects. Name another immutable core Ruby object.
 A: `Fixnum`
 
 Q: What happens when a value is too big for `Fixnum`?  
-A: It is automatically converteed to a `Bignum`.
+A: It is automatically converted to a `Bignum`.
 
 Q: The superclass of `Fixnum` is __.  
 A: `Integer`
@@ -251,7 +251,7 @@ Q: Name two `Enumerable` classes (classes which mix in the `Enumerable` module).
 A: `Array`, `Hash`, `Set`, `Range`, `IO`...
 
 Q: When might you use the `do`/`end` syntax versus using the curly bracket syntax for a block?  
-A: The `do`/`end` syntax for a block is commonly used for multiline statements. An alternate convention is to use curly bracket syntax for blocks that return a value while using `do`/`end` syntax for blocks that change the state of the system somehow and do not return a value.
+A: The `do`/`end` syntax for a block is commonly used for multi-line statements. An alternate convention is to use curly bracket syntax for blocks that return a value while using `do`/`end` syntax for blocks that change the state of the system somehow and do not return a value.
 
 Q: What is an iterator?  
 A: An object that allows traversal of the elements of the container. In Ruby, an iterator is any method that uses the yield statement.
@@ -391,7 +391,7 @@ Procs and Lambdas
 Q: What are the two varieties of Proc objects?  
 A: Procs and lambdas.
 
-Q: How do you accept an associated block within a Proc's paramters list.  
+Q: How do you accept an associated block within a Proc's parameters list.  
 A: Prefix `&` to the last parameter.
 
 Q: What is true about a method argument that is prefixed with `&`?  
@@ -403,7 +403,7 @@ A: Calling a lambda is more akin to invoking a method where a return statement i
 Q: Does an object have to be a Proc object for a `&` to be prefixed to it in a parameter list?  
 A: No, `&` can appear before any object with a `#to_proc` method.
 
-Q: What is the difference between a Proc invocation and a lambda invocaton?  
+Q: What is the difference between a Proc invocation and a lambda invocation?  
 A: There must be a block associated with lambda invocation. Lambdas must be invoked with the exact number of arguments as is required by method invocation, whereas procs are more flexible in receiving arguments.
 
 Q: When might you encounter a `LocalJumpError`?  
