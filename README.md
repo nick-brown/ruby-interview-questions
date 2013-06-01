@@ -11,10 +11,7 @@ Meaningful contributions will be accepted. A meaningful contribution may be any 
 * Clarification of existing questions or answers.  
 * Elaboration of existing answers.
 
-Any fixes to answers or updates to questions that make them more readable or understandable should be accepted. Questions that contain code should be tested before they are submitted. The questions should be focused around Ruby concepts and behaviors, as well as core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Standard Ruby documentation syntax is used. `::` signifies access to constants and class methods while `#` signifies access to instance methods. Questions are listed in ascending order by their general difficulty within each section category. Sample answers should also be provided for the convenience of the reader. Significant contributors will be added to the list below.
-
-* [@gregstallings](<https://twitter.com/gregstallings>)
-* [@npalaniuk](<https://twitter.com/npalaniuk>)
+Questions should be focused around Ruby concepts and behaviors, as well as core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Sample answers should be provided for the convenience of the reader.
 
 Language Characteristics and Core Objects
 -------------------------------------------------------------------------------
@@ -800,8 +797,3 @@ A: Symbols.
 
 Q: What module in the standard library enables English language alternatives to terse global variables?  
 A: `English`
-
-License
-===============================================================================
-
-The text contents of this document are licensed in the manner specified in the accompanying LICENSE file in order to ensure that this work and all contributions remain open.
