@@ -1,4 +1,4 @@
-#<img src="img/ruby_trivia_logo.png"> Ruby Trivia
+#<img src="img/logo.png"> Ruby Trivia
 
 A list of questions about Ruby programming you can use to quiz yourself.
 
