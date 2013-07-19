@@ -308,7 +308,7 @@ A: `undef method_name`, `#remove_method`, `#undef_method`
 Q: What is the difference between `#remove_method` and `#undef_method`?  
 A: `#undef_method` prevents any invocation of the method through an instance of the class, while `#remove_method` will remove the method definition from the class, but not prevent inherited methods of the same name from being invoked.
 
-Q: Explain how Ruby syntax supports object specifiers in parameters lists?  
+Q: Explain how Ruby syntax supports keyword arguments in parameters lists?  
 A: You can leave off the curly brackets from a hash in a parameter list, assuming it is the last argument in the list.
 
 Procs and Lambdas
