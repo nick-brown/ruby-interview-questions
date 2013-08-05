@@ -395,7 +395,7 @@ A: A class having only a single instance.
 Q: How might you create a singleton?  
 A: By including the `Singleton` module.
 
-Q: Can you defined accessor methods for class instance variables?  
+Q: Can you define accessor methods for class instance variables?  
 A: Yes, if they are defined as singleton methods of the class.
 
 Q: Can classes be nested?  
