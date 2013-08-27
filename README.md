@@ -341,7 +341,7 @@ A: A closure is an object that is both an invocable function together with a var
 Q: Does a closure in Ruby retain variables by value or by reference?  
 A: By reference; the closure also extends the lifetimes of its variables.
 
-Q: A closure's reference to its variables is said to by dynamically bound. What does this mean?  
+Q: A closure's reference to its variables is said to be dynamically bound. What does this mean?  
 A: The values of the variables are resolved when the Proc object is executed.
 
 Q: Is it possible to alter a closure?  
