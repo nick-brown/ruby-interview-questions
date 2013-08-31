@@ -4,7 +4,7 @@ A list of questions about Ruby programming you can use to quiz yourself.
 
 #### Contributing
 
-Meaningful contributions will be accepted. Questions should be focused around Ruby concepts and behaviors, as well as core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Sample answers should be provided for the convenience of the reader.
+Questions should be focused around Ruby concepts and behaviors, as well as core objects and methods. Questions about data structures and algorithms, design patterns, or other general programming questions are generally outside the scope of this document. Sample answers should be provided for the convenience of the reader.
 
 Language Characteristics and Core Objects
 -------------------------------------------------------------------------------
@@ -51,7 +51,7 @@ Q: Does `String` include the `Enumerable` module?
 A: No.
 
 Q: What method might you use to enumerate over a string?  
-A: `#each_char`
+A: `String#each_char`
 
 Q: What is the difference between a character literal such as `?A` and a string literal such as `"A"`?  
 A: There is no difference.
@@ -88,11 +88,11 @@ A: With `%W` it is possible to define an array containing string interpolation.
 
 ### Hash
 
-Q: Name at least one synonym for `#key?`?  
-A: `#has_key?`, `#include?`, `#member?`
+Q: Name at least one synonym for `Hash#key?`?  
+A: `Hash#has_key?`, `Hash#include?`, `Hash#member?`
 
 Q: How might you specify a default value for a hash?  
-A: Pass the default values as an argument to `#new` on initialization or change the default directly with the setter method `Hash#default`. You may also provide a default at time of query using `#fetch`.
+A: Pass the default values as arguments to `::new` on initialization or change the default directly with the method `Hash#default`. You may also provide a default at the time of query with `Hash#fetch`.
 
 Q: Does `Hash` use `#==` or `#eql?` to compare hash keys?  
 A: `#eql?`
@@ -186,7 +186,7 @@ Blocks and Iterators
 -------------------------------------------------------------------------------
 
 Q: Name at least two classes which include the `Enumerable` module.  
-A: `Array`, `Hash`, `Set`, `Range`, `IO`...
+A: `Array`, `Hash`, `Range`, `IO`...
 
 Q: When might you use the `do`/`end` syntax versus using the curly bracket syntax for a block?  
 A: The `do`/`end` syntax for a block is commonly used for multi-line statements. An alternate convention is to use curly bracket syntax for blocks that return a value while using `do`/`end` syntax for blocks that change the state of the system somehow and do not return a value.
@@ -197,8 +197,8 @@ A: An object that allows traversal of the elements of the container. In Ruby, an
 Q: How do you define block-local variables within a block's parameter list?  
 A: Variables that appear after a semicolon in a block's parameter list are guaranteed to be local to the block.
 
-Q: What is the synonym of `#include?`?  
-A: `#member?`
+Q: What is the synonym of `Enumerable#include?`?  
+A: `Enumerable#member?`
 
 Q: Can a collection be modified while it is being iterated upon?  
 A: Yes.
@@ -206,20 +206,20 @@ A: Yes.
 Q: Is a block an object?  
 A: No. A block is a syntactic structure of the interpreter. A block can be converted to a Proc object.
 
-Q: What is the synonym of `#collect`?  
-A: `#map`
+Q: What is the synonym of `Enumberable#collect`?  
+A: `Enumberable#map`
 
-Q: What is the synonym of `#find`?  
-A: `#detect`
+Q: What is the synonym of `Enumberable#find`?  
+A: `Enumberable#detect`
 
-Q: What is the synonym of `#select`?  
-A: `#find_all`
+Q: What is the synonym of `Enumberable#select`?  
+A: `Enumberable#find_all`
 
-Q: What is the opposite of `#select`?  
-A: `#reject`
+Q: What is the opposite of `Enumberable#select`?  
+A: `Enumberable#reject`
 
-Q: What is the synonym of `#inject`?  
-A: `#reduce`
+Q: What is the synonym of `Enumberable#inject`?  
+A: `Enumberable#reduce`
 
 Q: Why might you use `#each` instead of `for/in`?  
 A: It's the "Ruby way" - an example of how Ruby defines methods that mimic natural language concepts. Iterator methods such as `#each` read more naturally. `#each` is a block so it defines a new variable scope. `for/in` depends on the existence of `#each` which implies that `#each` is a more fundamental aspect of the language.
@@ -240,19 +240,19 @@ Q: Does Ruby support method overloading?
 A: No.
 
 Q: How might you test the presence of a method?  
-A: `#respond_to?` or `#method?`
+A: `Object#respond_to?` or `Module#method_defined?`
 
 Q: What is the meaning of `self`?  
 A: The current object.
 
 Q: What does a bang `!` at the end of a method signify?  
-A: That it should be used cautiously. Methods with this naming convention typically perform a mutation on the receiver object.
+A: That it should be with caution. Methods with this naming convention typically perform a mutation on the receiver object.
 
 Q: What is a mutator method?  
 A: A method which alters the internal state of the object receiver.
 
 Q: Is a method an object?  
-A: No, however, a `Method` object is, of course, an object.
+A: No, however, a `Method` object is of course, an object.
 
 Q: What is a predicate in the context of Ruby method naming conventions?  
 A: A method that answers a question posed by the method invocation or method name. Predicates typically return a boolean.
@@ -267,7 +267,7 @@ Q: Why might you want to alias a method?
 A: To create a synonym for an existing method that is more readable or appropriate in the context of some problems or to add functionality to an existing method.
 
 Q: How might you send a message to a private method of a receiver object from outside the scope of the receiver object?  
-A: `#send`
+A: `Object#send`
 
 Q: How would you typically prevent future modifications to an object?  
 A: `#freeze`
@@ -288,7 +288,7 @@ Q: How does `return` differ from within a method than from within a block?
 A: `return` within a method returns from the method. `return` within a block returns from its lexically enclosing method.
 
 Q: Are class methods public or private?  
-A: They are public by default. You can change their visibility using `#private_class_method` and back again using `#public_class_method`.
+A: They are public by default. You can change their visibility using `Module#private_class_method` and back again using `Module#public_class_method`.
 
 Q: Does a method return a value if it does not contain an expression?  
 A: Yes, it returns `nil`.
@@ -297,16 +297,16 @@ Q: If a method is declared outside a class or module definition at the top level
 A: As a private instance method of `Object`, whose value of `self` resolves to the special "main" object.
 
 Q: What is the origin of the "keywords" `public`, `private`, and `protected`?  
-A: They are instance methods of the `Module` class. Since `Class` subclasses `Module`, these methods can be invoked without explicit reference to `self` such as `self.private`.
+A: They are instance methods of the `Module` class. Since `Class` subclasses `Module`, these methods can be invoked without an explicit reference to `self` such as with `self.private`.
 
 Q: How do you define a private class method?  
-A: Define the class method and call `#private_class_method` with an argument as a symbol of the class method name.
+A: Define the class method and call `Module#private_class_method` with an argument as a symbol of the class method name.
 
 Q: Name at least two ways to disable methods.  
-A: `undef method_name`, `#remove_method`, `#undef_method`
+A: `undef method_name`, `Module#remove_method`, `Module#undef_method`
 
-Q: What is the difference between `#remove_method` and `#undef_method`?  
-A: `#undef_method` prevents any invocation of the method through an instance of the class, while `#remove_method` will remove the method definition from the class, but not prevent inherited methods of the same name from being invoked.
+Q: What is the difference between `Module#remove_method` and `Module#undef_method`?  
+A: `Module#undef_method` prevents any invocation of the method through an instance of the class, while `Module#remove_method` will remove the method definition from the class, but not prevent inherited methods of the same name from being invoked.
 
 Q: Explain how Ruby syntax supports keyword arguments in parameters lists?  
 A: You can leave off the curly brackets from a hash in a parameter list, assuming it is the last argument in the list.
@@ -324,7 +324,7 @@ Q: What is the main difference between procs and lambdas?
 A: Calling a lambda is more akin to invoking a method where a return statement in a lambda will return from the lambda itself, instead of returning from the lexically enclosing method, as procs do. Adding to this notion, lambdas must be invoked with the exact number of arguments such as is required by method invocation, whereas procs are more flexible in receiving arguments.
 
 Q: Does an object have to be a Proc object for a `&` to be prefixed to it in a parameter list?  
-A: No, `&` can appear before any object with a `#to_proc` method.
+A: No, `&` can appear before any object having a `#to_proc` method.
 
 Q: What is the difference between Proc invocation and lambda invocation?  
 A: A block must be associated with lambda invocation. Lambdas must be invoked with the exact number of arguments such as is required by method invocation, whereas procs are more flexible in receiving arguments.
@@ -350,8 +350,8 @@ A: Yes, the binding of a closure can be altered using `#binding`.
 Method Objects
 -------------------------------------------------------------------------------
 
-Q: What must you first do before invoking an `UnboundMethod` object?  
-A: Bind it to a receiver object using `#bind`.
+Q: What must you first do before you can invoke an `UnboundMethod` object?  
+A: Bind it to a receiver object using `UnboundMethod#bind`.
 
 Q: Are method objects closures?  
 A: No.
@@ -372,7 +372,7 @@ Q: What happens if you attempt to define a constant on a class from outside the 
 A: It defines successfully since constants are publicly accessible and assignable.
 
 Q: What happens to a constant which is not assigned?  
-A: It will not exist.
+A: It does not exist.
 
 Classes
 -------------------------------------------------------------------------------
@@ -381,7 +381,7 @@ Q: What is the difference between an instance variable and a class variable?
 A: A class variable is evaluated in reference to the class object created by the enclosing class definition while an instance variable is evaluated in reference to `self`. Instance variables cannot be referenced outside of instance methods.
 
 Q: Why must a class name begin with a capital letter?  
-A: Because the class keyword creates a new constant that refers to the class and constants begin with a capital letter.
+A: Because the `class` keyword creates a new constant that refers to the class and constants begin with a capital letter.
 
 Q: Is `#initialize` an instance method or a class method?  
 A: An instance method.
@@ -404,7 +404,7 @@ A: Yes.
 Q: Is `#initialize` public or private?  
 A: Private by default.
 
-Q: What does `#allocate` do?  
+Q: What does `Class#allocate` do?  
 A: It creates an uninitialized instance of a class.
 
 Q: What is an eigenclass?  
@@ -434,17 +434,17 @@ A: `#initialize_copy`
 Q: Does `#initialize_copy` override `#initialize`?  
 A: No.
 
-Q: What does it mean that `#dup` and `#clone` perform shallow copies?  
+Q: What does it mean that `Object#dup` and `#clone` perform shallow copies?  
 A: The instance variables of the copy are copied by reference rather than by value.
 
-Q: What is the difference between `#dup` and `#clone`?  
-A: `#clone` copies the frozen state of an object and any singleton methods of an object while `#dup` does neither.
+Q: What is the difference between `Object#dup` and `#clone`?  
+A: `#clone` copies the frozen state of an object and any singleton methods of an object while `Object#dup` does neither.
 
 Modules
 -------------------------------------------------------------------------------
 
 Q: What are two main functions of modules?  
-A: As mixins or as namespaces.
+A: As mixins, as namespaces...
 
 Q: Can a module be subclassed?  
 A: No.
@@ -459,12 +459,12 @@ Q: What is the superclass of `Class`?
 A: `Module`
 
 Q: Why must module names begin with a capital letter?  
-A: Because the module keyword creates a new constant that refers to the module and constants begin with a capital letter.
+A: Because the `module` keyword creates a new constant that refers to the module and constants begin with a capital letter.
 
 Q: How would you check if a module has been included by an object?  
 A: Using `#is_a?` such as with `my_obj.is_a? MyModule`.
 
-Q: What does `#module_function` do?  
+Q: What does `Module#module_function` do?  
 A: Makes class copies of the specified methods and makes instance methods private.
 
 Structs
@@ -479,11 +479,11 @@ A: Yes.
 Inheritance
 -------------------------------------------------------------------------------
 
-Q: What's the difference between `#is_a?` and `#instance_of?`?  
-A: `#instance_of?` ignores inheritance and any mixed-in modules.
+Q: What's the difference between `Object#is_a?` and `Object#instance_of?`?  
+A: `Object#instance_of?` ignores inheritance and any mixed-in modules.
 
-Q: If `#super` is invoked without any arguments, which if any arguments get passed to the superclass method?  
-A: All arguments that were passed to the subclass method will be passed to the superclass method.
+Q: If the `super` keyword is used in a method without any arguments, which if any arguments get passed to the superclass method?  
+A: All arguments that were passed to the current subclass method will be passed to the superclass method.
 
 Q: Are singleton methods inherited?  
 A: No, since they are not defined by a class and thus are unrelated to the inheritance mechanism.
@@ -504,19 +504,19 @@ Q: What should you watch out for when subclassing a class that is unknown to you
 A: Overriding private methods or overwriting class variables.
 
 Q: How might you prevent a method on a superclass from being inherited by a subclass?  
-A: Override the method on the subclass or `undef` the method in the subclass.
+A: Override the method in the subclass or `undef` the method in the subclass.
 
 Metaprogramming
 -------------------------------------------------------------------------------
 
-Q: Can `#attr_reader` be considered an example of metaprogramming?  
+Q: Can `Module#attr_reader` be considered an example of metaprogramming?  
 A: Yes, since it creates getter methods at the time of the enclosing class definition.
 
 Q: How might you access an instance variable of a receiver object from outside the scope of the receiver object?  
-A: With an accessor method or using `#instance_variables_get`, `#instance_eval`, or `binding.eval`.
+A: With an accessor method or using `Object#instance_variable_get`, `BasicObject#instance_eval`, or `Binding#eval`.
 
 Q: Which method is invoked when a method is not found?  
-A: `#method_missing`
+A: The nearest `#method_missing`
 
 Q: How can you open an eigenclass from within its associated class?  
 A: `class << self`
@@ -527,23 +527,23 @@ A: A representation of an object's variable bindings at some moment.
 Q: What is Ruby's reflection API?  
 A: A collection of methods mostly defined by `Kernel`, `Object`, and `Module` that allow a program to examine its own state and structure.
 
-Q: Which method is called when a constant is not found?  
-A: `#const_missing`
+Q: Which method is invoked when a constant is not found?  
+A: The nearest `#const_missing`
 
-Q: `#define_method` accepts how many and of what types of arguments?  
+Q: `Module#define_method` accepts how many and of what types of arguments?  
 A: A symbol as the method name and either a block or a `Method` object as the method body.
 
 Q: Can `#eval` accept a block?  
-A: No, `#eval` can only accept a string. `#class_eval` and `#instance_eval` can accept blocks.
+A: No, `#eval` accepts a string. However, `Module#class_eval` and `BasicObject#instance_eval` can accept blocks.
 
 Q: How might you obtain a reference to an eigenclass from within its associated class?  
-A: `#singleton_class`, `eigenclass = class << self; self; end`
+A: `Object#singleton_class`, `eigenclass = class << self; self; end`
 
 Q: How might you alter method visibility from outside a class definition?  
-A: Using `#class_eval`
+A: Using `Module#class_eval`
 
-Q: What is the difference between `#instance_eval` and `#instance_exec`?  
-A: `#instance_exec` can only accept a block, not a string, and it can accept arguments and pass them to the block, allowing the block to be evaluated in the context of the receiver object with parameters whose values come from the block.
+Q: What is the difference between `BasicObject#instance_eval` and `BasicObject#instance_exec`?  
+A: `BasicObject#instance_exec` can only accept a block, not a string, and it can accept arguments and pass them to the block, allowing the block to be evaluated in the context of the receiver object with parameters whose values come from the block.
 
 Q: Where do `#class_variable_get` and `#class_variables_set` live in the object model?  
 A: `Module`
@@ -562,25 +562,25 @@ Loading Modules, Files, and Gems
 Q: What is `$LOAD_PATH`?  
 A: A global array of strings of the directories to be searched when loading files with the load and require methods. `$LOAD_PATH` is equivalent to `$:`.
 
-Q: What is the difference between `#require` and `#load`?  
-A: `#require` can load binary extensions. `#require` does not require a filename extension. `#require` prevents multiple loads of the same file path. `#load` loads the specified file at the current `$SAFE` level while `#require` loads the specified file with a `$SAFE` level of 0.
+Q: What is the difference between `Kernel#require` and `Kernel#load`?  
+A: `Kernel#require` can load binary extensions. `Kernel#require` does not require a filename extension. `Kernel#require` prevents multiple loads of the same file path. `Kernel#load` loads the specified file at the current `$SAFE` level while `Kernel#require` loads the specified file with a `$SAFE` level of 0.
 
-Q: Does a file loaded with `#require` or `#load` have access to the local variables of the referencing file?  
+Q: Does a file loaded with `Kernel#require` or `Kernel#load` have access to the local variables of the referencing file?  
 A: No.
 
-Q: What is the difference between `#require` and `#require_relative`?  
-A: `#require_relative` ignores the load path.
+Q: What is the difference between `Kernel#require` and `Kernel#require_relative`?  
+A: `Kernel#require_relative` ignores the load path.
 
-Q: What does `#autoload` do?  
+Q: What does `Kernel#autoload` do?  
 A: Allows lazy-loading of files when a constant assigned to a file is first referenced.
 
 ### Files
 
-Q: What does `File#expand_path` do?  
+Q: What does `File::expand_path` do?  
 A: Converts a relative path to a fully qualified path.
 
-Q: What method in `Dir` can be used to list the contents of a directory?  
-A: `#entries`, `#foreach`...
+Q: What method(s) in class `Dir` can be used to list the contents of a directory?  
+A: `Dir::entries`, `Dir::foreach`, `Dir#each`...
 
 Q: What is an `IO` object?  
 A: An IO object is an instance of class `IO` that can be used for reading or writing binary data to and from a file.
@@ -592,9 +592,6 @@ A: Yes.
 
 Q: If more than one version of a Gem is installed, which version will be used?  
 A: The Gem with the highest version number.
-
-Q: How might you alter the default version of a Gem that will be used?  
-A: Using `Kernel#gem`.
 
 Security
 -------------------------------------------------------------------------------
@@ -633,10 +630,10 @@ Debugging
 -------------------------------------------------------------------------------
 
 Q: What is the difference between `#to_s` and `#inspect`?  
-A: `#inspect` is the same as `#to_s`, except some classes redefine `#inspect` to provide output that is more helpful in debugging.
+A: `#inspect` is the same as `#to_s`, except some classes redefine `#inspect` to provide output that is more helpful for debugging.
 
 Q: What is the difference between `#puts` and `#p`?  
-A: `#p` converts objects to strings with the `#inspect` method instead of with `#to_s`.
+A: `#p` converts objects to strings with an `#inspect` method instead of with a `#to_s` method.
 
 Q: Which Ruby interpreter option enables debugging?  
 A: `-d` / `--debug`
@@ -645,7 +642,7 @@ Q: What is the global variable for the last exception raised?
 A: `$ERROR_INFO` equivalent to `$!`
 
 Q: How can you obtain the current state of the call stack?  
-A: Using `Exception.backtrace` or `Kernel#caller`
+A: Using `Exception#backtrace` or `Kernel#caller`
 
 Q: What does `Kernel#__method__` return?  
 A: The name of the currently executing method as a symbol.
@@ -656,8 +653,11 @@ A: `Kernel#__callee__`
 The Ruby Environment and the Interpreter
 -------------------------------------------------------------------------------
 
-Q: What is the difference between `#puts` and `#prints`?  
-A: `#puts` appends a newline to the output.
+Q: What is the difference between `#puts` and `#print`?  
+A: `#puts` appends a newline character to the output.
+
+Q: Which Ruby interpreter option allows running of one-line scripts?  
+A: `-e`
 
 Q: Where do the curly brackets to define a hash literal `{}` exist in the object model?  
 A: It does not exist within the object model - it is a function of the interpreter.
@@ -671,7 +671,7 @@ A: It is a syntactical conversion in the interpreter.
 Q: What is the global constant to access arguments specified on the command line?  
 A: `ARGV`
 
-Q: Which interpreter option enables warning about deprecated or problematic code?  
+Q: Which Ruby interpreter option enables warnings about deprecated or problematic code?  
 A: `-w`
 
 Q: In MRI, which objects are not subject to garbage collection?  
