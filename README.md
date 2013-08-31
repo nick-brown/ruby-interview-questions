@@ -545,7 +545,7 @@ A: Using `Module#class_eval`
 Q: What is the difference between `BasicObject#instance_eval` and `BasicObject#instance_exec`?  
 A: `BasicObject#instance_exec` can only accept a block, not a string, and it can accept arguments and pass them to the block, allowing the block to be evaluated in the context of the receiver object with parameters whose values come from the block.
 
-Q: Where do `#class_variable_get` and `#class_variables_set` live in the object model?  
+Q: Where do `#class_variable_get` and `#class_variable_set` live in the object model?  
 A: `Module`
 
 Q: Where do `#instance_variable_get` and `#instance_variable_set` live in the object model?  
