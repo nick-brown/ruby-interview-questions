@@ -675,7 +675,7 @@ Q: Which Ruby interpreter option enables warnings about deprecated or problemati
 A: `-w`
 
 Q: In MRI, which objects are not subject to garbage collection?  
-A: Symbols.
+A: Symbols, but in version 2.2 [was implemented symbol GC](http://www.sitepoint.com/symbol-gc-ruby-2-2/).
 
 Q: What module in the standard library enables English language alternatives to terse global variables?  
 A: `English`
