@@ -633,7 +633,7 @@ Q: What is the difference between `#to_s` and `#inspect`?
 A: `#inspect` is the same as `#to_s`, except some classes redefine `#inspect` to provide output that is more helpful for debugging.
 
 Q: What is the difference between `#puts` and `#p`?  
-A: `#p` converts objects to strings with an `#inspect` method instead of with a `#to_s` method.
+A: `#p` converts objects to strings with an `#inspect` method and returns argument(s) as a result (useful to inject directly into the method argument list). `#puts` uses `#to_s` and returns `nil`.
 
 Q: Which Ruby interpreter option enables debugging?  
 A: `-d` / `--debug`
@@ -642,19 +642,19 @@ Q: What is the global variable for the last exception raised?
 A: `$ERROR_INFO` equivalent to `$!`
 
 Q: How can you obtain the current state of the call stack?  
-A: Using `Exception#backtrace` or `Kernel#caller`
+A: Using `Exception#backtrace` (state at exception raise), `Thread.current.backtrace` (current state) or `Kernel#caller` (does not include current line)
 
 Q: What does `Kernel#__method__` return?  
 A: The name of the currently executing method as a symbol.
 
 Q: What is the synonym of `Kernel#__method__`?  
-A: `Kernel#__callee__`
+A: `Kernel#__callee__` (the difference since Ruby 2.0 is that `__callee__` returns the name of an aliased method, if any).
 
 The Ruby Environment and the Interpreter
 -------------------------------------------------------------------------------
 
 Q: What is the difference between `#puts` and `#print`?  
-A: `#puts` appends a newline character to the output.
+A: `#puts` appends a newline character to the output. `#print` prints a value of special variable `$_` when called without arguments.
 
 Q: Which Ruby interpreter option allows running of one-line scripts?  
 A: `-e`
