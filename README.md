@@ -206,20 +206,20 @@ A: Yes.
 Q: Is a block an object?  
 A: No. A block is a syntactic structure of the interpreter. A block can be converted to a Proc object.
 
-Q: What is the synonym of `Enumberable#collect`?  
-A: `Enumberable#map`
+Q: What is the synonym of `Enumerable#collect`?  
+A: `Enumerable#map`
 
-Q: What is the synonym of `Enumberable#find`?  
-A: `Enumberable#detect`
+Q: What is the synonym of `Enumerable#find`?  
+A: `Enumerable#detect`
 
-Q: What is the synonym of `Enumberable#select`?  
-A: `Enumberable#find_all`
+Q: What is the synonym of `Enumerable#select`?  
+A: `Enumerable#find_all`
 
-Q: What is the opposite of `Enumberable#select`?  
-A: `Enumberable#reject`
+Q: What is the opposite of `Enumerable#select`?  
+A: `Enumerable#reject`
 
-Q: What is the synonym of `Enumberable#inject`?  
-A: `Enumberable#reduce`
+Q: What is the synonym of `Enumerable#inject`?  
+A: `Enumerable#reduce`
 
 Q: Why might you use `#each` instead of `for/in`?  
 A: It's the "Ruby way" - an example of how Ruby defines methods that mimic natural language concepts. Iterator methods such as `#each` read more naturally. `#each` is a block so it defines a new variable scope. `for/in` depends on the existence of `#each` which implies that `#each` is a more fundamental aspect of the language.
