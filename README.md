@@ -67,12 +67,6 @@ A: Strings are mutable while symbols are immutable. Though Ruby internally makes
 ### Numeric
 
 Q: Symbols are immutable objects. Name another immutable core Ruby object.  
-A: `Fixnum`
-
-Q: What happens when a value becomes too big for `Fixnum`?  
-A: It is automatically converted to a `Bignum`.
-
-Q: What is the superclass of `Fixnum`?  
 A: `Integer`
 
 Q: What is the superclass of `Integer`?  
